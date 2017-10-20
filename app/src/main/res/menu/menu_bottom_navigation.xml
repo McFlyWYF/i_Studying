@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:title="首页"
+        android:icon="@mipmap/ic_launcher_round"/>
+
+    <item
+        android:id="@+id/action_study"
+        android:title="自习室"
+        android:icon="@mipmap/ic_launcher_round"/>
+
+    <item
+        android:id="@+id/action_chat"
+        android:title="下课聊"
+        android:icon="@mipmap/ic_launcher_round" />
+
+    <item
+        android:id="@+id/action_me"
+        android:title="我的"
+        android:icon="@mipmap/ic_launcher_round"/>
+
+</menu>
