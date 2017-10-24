@@ -1,31 +1,24 @@
 package com.example.logindemo;
 
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.logindemo.Fragment.ChatFragment;
 import com.example.logindemo.Fragment.HomeFragment;
 import com.example.logindemo.Fragment.PersonFragment;
 import com.example.logindemo.Fragment.StudyFragment;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
+    private ViewPager viewPager;
     private StudyFragment studyFragment;
     private ChatFragment chatFragment;
     private PersonFragment personFragment;
@@ -78,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         initFragments();
     }
 
+
     //添加各个Fragment
     public void switchFrament(int lastIndex, int index) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -94,12 +88,12 @@ public class MainActivity extends AppCompatActivity {
         chatFragment = new ChatFragment();
         personFragment = new PersonFragment();
         homeFragment = new HomeFragment();
-        fragments = new Fragment[]{homeFragment,studyFragment, chatFragment, personFragment};
+        fragments = new Fragment[]{homeFragment, studyFragment, chatFragment, personFragment};
         lastShowFragment = 0;
         Fragment fragment = new Fragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, fragment)
+                .add(R.id.fragment_container, homeFragment)
                 .show(fragment)
                 .commit();
     }
