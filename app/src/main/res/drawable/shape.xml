@@ -10,7 +10,7 @@
     /**
     *圆角设置
     */
-    <corners android:radius="5dp"
+    <corners android:radius="8dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
 

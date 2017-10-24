@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/group"
-        android:title="创建群聊"/>
+        android:title="创建群聊"
+        android:icon="@drawable/group"/>
 
     <item
         android:id="@+id/add_friend"
-        android:title="加好友"/>
+        android:title="加好友"
+        android:icon="@drawable/add"/>
 
     <item
         android:id="@+id/draw"
-        android:title="扫一扫"/>
+        android:title="扫一扫"
+        android:icon="@drawable/draw"/>
 </menu>
