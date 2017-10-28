@@ -6,7 +6,7 @@
     android:id="@+id/view_pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.logindemo.MainActivity">
+    tools:context="com.example.logindemo.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="2px"
         android:layout_above="@+id/btn_menu"
-        android:background="#000000" />
+        android:background="#BFBFBF" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/btn_menu"
