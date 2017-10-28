@@ -1,4 +1,4 @@
-package com.example.logindemo;
+package com.example.logindemo.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +15,7 @@ import com.example.logindemo.Fragment.ChatFragment;
 import com.example.logindemo.Fragment.HomeFragment;
 import com.example.logindemo.Fragment.PersonFragment;
 import com.example.logindemo.Fragment.StudyFragment;
+import com.example.logindemo.R;
 
 public class MainActivity extends AppCompatActivity {
 

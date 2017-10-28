@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.logindemo.Fragment.HomeFragment">
 
-    <TextView
-        android:id="@+id/text"
+    <AutoCompleteTextView
+        android:id="@+id/search_main_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="首页"
-        android:textSize="26sp"
-        android:gravity="center"/>
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:hint="输入你要搜索的内容"
+        android:background="@drawable/navigation"
+        android:drawableRight="@drawable/searcher"
+        android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="100dp"
+               android:layout_weight="1"
+               android:text="新闻"
+               android:textSize="15sp"
+               android:drawableTop="@drawable/news"
+               android:gravity="center_horizontal"
+               android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="失物招领"
+                android:textSize="15sp"
+                android:drawableTop="@drawable/find"
+                android:gravity="center_horizontal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="信息发布"
+                android:textSize="15sp"
+                android:drawableTop="@drawable/imagation"
+                android:gravity="center_horizontal"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:text="社团活动"
+                android:textSize="15sp"
+                android:drawableTop="@drawable/activity"
+                android:gravity="center_horizontal"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+</LinearLayout>

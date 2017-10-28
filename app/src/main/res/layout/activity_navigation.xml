@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.amap.api.maps.MapView>
+
+    <com.amap.api.navi.AMapNaviView
+        android:id="@+id/navi_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+   <AutoCompleteTextView
+       android:id="@+id/search_text"
+       android:layout_width="300dp"
+       android:layout_height="50dp"
+       android:background="@drawable/navigation"
+       android:hint="输入终点" />
+
+    <Button
+        android:id="@+id/navition_btn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@drawable/searcher"
+        android:text="搜索"
+        android:textColor="#ffff"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

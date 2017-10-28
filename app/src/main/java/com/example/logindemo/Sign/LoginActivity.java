@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.logindemo.MainActivity;
+import com.example.logindemo.activity.MainActivity;
 import com.example.logindemo.R;
 
 public class LoginActivity extends AppCompatActivity {
