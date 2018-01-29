@@ -3,17 +3,17 @@ package com.example.logindemo.activity;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.logindemo.Fragment.ChatFragment;
 import com.example.logindemo.Fragment.HomeFragment;
-import com.example.logindemo.Fragment.PersonFragment;
 import com.example.logindemo.Fragment.StudyFragment;
 import com.example.logindemo.R;
 
@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private StudyFragment studyFragment;
     private ChatFragment chatFragment;
-    private PersonFragment personFragment;
     private HomeFragment homeFragment;
     private Fragment[] fragments;
     private int lastShowFragment = 0;
+    private SearchView mSearchView;
 
     //监听各个控件
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -50,12 +50,6 @@ public class MainActivity extends AppCompatActivity {
                     if (lastShowFragment != 2) {
                         switchFrament(lastShowFragment, 2);
                         lastShowFragment = 2;
-                    }
-                    return true;
-                case R.id.action_me:
-                    if (lastShowFragment != 3) {
-                        switchFrament(lastShowFragment, 3);
-                        lastShowFragment = 3;
                     }
                     return true;
             }
@@ -87,9 +81,8 @@ public class MainActivity extends AppCompatActivity {
     private void initFragments() {
         studyFragment = new StudyFragment();
         chatFragment = new ChatFragment();
-        personFragment = new PersonFragment();
         homeFragment = new HomeFragment();
-        fragments = new Fragment[]{homeFragment, studyFragment, chatFragment, personFragment};
+        fragments = new Fragment[]{homeFragment, studyFragment, chatFragment};
         lastShowFragment = 0;
         Fragment fragment = new Fragment();
         getSupportFragmentManager()
@@ -97,5 +90,16 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.fragment_container, homeFragment)
                 .show(fragment)
                 .commit();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search, menu);
+        MenuItem searchItem = menu.findItem(R.id.menu_search);
+        //通过MenuItem得到SearchView
+        mSearchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        mSearchView.setSubmitButtonEnabled(true);//显示提交按钮
+        mSearchView.setQueryHint("请输入要搜索的内容");//输入框提示语
+        return super.onCreateOptionsMenu(menu);
     }
 }

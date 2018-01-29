@@ -4,24 +4,29 @@
     /**
     *按钮颜色
     */
-    <solid android:color="#6699FF"
+    <solid
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:color="#6699FF" />
     /**
     *圆角设置
     */
-    <corners android:radius="8dp"
+    <corners
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:bottomLeftRadius="180dp"
+        android:bottomRightRadius="180dp"
+        android:topLeftRadius="180dp"
+        android:topRightRadius="180dp" />
 
     /**
     *和边缘的距离
     */
     <padding
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:bottom="10dp"
         android:left="10dp"
         android:right="10dp"
-        android:top="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:top="10dp" />
 </shape>

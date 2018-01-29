@@ -45,7 +45,6 @@ public class NavigationActivity extends Activity {
     public LocationSource mLocationSource;
     private Button mSearchButton;
     private UiSettings mUiSettings;//定义一个UiSettings对象
-    private TextView mSearchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,17 +55,12 @@ public class NavigationActivity extends Activity {
         mMapView.onCreate(savedInstanceState);
         aMap = mMapView.getMap();
         mSearchButton = (Button) findViewById(R.id.navition_btn);
-        mSearchText = (TextView) findViewById(R.id.search_text);
-        mSearchText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(NavigationActivity.this,SearchMap.class);
+                startActivity(intent);
+                finish();
             }
         });
         initLocation();

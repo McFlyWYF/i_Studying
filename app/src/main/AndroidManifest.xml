@@ -32,21 +32,20 @@
             android:name="com.amap.api.v2.apikey"
             android:value="5d4097379755c883391f614b4877473a" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".Sign.LoginSystem">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sign.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".Sign.SignupActivity" />
-        <activity
-            android:name=".activity.StudyActivity"
-            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Sign.LoginActivity"/>
+        <activity android:name=".activity.StudyActivity" />
         <activity android:name=".activity.ChatActivity" />
-        <activity android:name=".activity.PersonActivity" />
         <activity android:name=".navigation.NavigationActivity" />
+        <activity android:name=".navigation.SearchMap" />
 
         <service android:name="com.amap.api.location.APSService" />
 
