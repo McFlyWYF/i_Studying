@@ -4,8 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.logindemo.Fragment.StudyFragment">
 
-    <include layout="@layout/title"/>
+    <ImageView
+        android:id="@+id/show_image"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/library"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="西区教学楼"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#ffffff"
+            android:text="4号楼"
+            android:background="@drawable/class_shape"/>
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="7号楼"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="8号楼"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="15号楼"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:text="主楼教学楼"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/class_shape"
+            android:text="1号楼" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="9号楼" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="11号楼" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="13号楼" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:text="东区教学楼"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="6号楼" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="10号楼" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/class_shape"
+            android:textColor="#ffffff"
+            android:text="14号楼" />
+
+    </LinearLayout>
 </LinearLayout>

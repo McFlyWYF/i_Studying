@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backlogin">
+
+    <Button
+        android:id="@+id/student_login"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="240dp"
+        android:textSize="18sp"
+        android:text="学生登录"
+        android:textColor="#ffff"/>
+
+    <Button
+        android:id="@+id/school_login"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:text="学校登录"
+        android:textColor="#ffff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:text="NUC校园"/>
+
+</LinearLayout>

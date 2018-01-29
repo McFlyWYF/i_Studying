@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.logindemo.navigation.SearchMap">
+
+    <LinearLayout
+        android:id="@+id/search"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/start_view"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/search_map_shape"
+            android:ems="19"
+            android:hint="输入起点"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp" />
+
+
+        <EditText
+            android:id="@+id/end_view"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/search_map_shape"
+            android:ems="19"
+            android:hint="输入终点"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/search_road_map"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:text="搜索"
+        android:textColor="#ffffff"
+        android:textSize="15sp"/>
+</RelativeLayout>
+
