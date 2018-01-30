@@ -54,4 +54,18 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BFBFBF" />
+
+    <ListView
+        android:id="@+id/news_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:dividerHeight="7dp"
+        android:divider="#dcdcdc">
+
+    </ListView>
+
 </LinearLayout>

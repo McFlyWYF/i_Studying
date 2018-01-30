@@ -1,13 +1,17 @@
 package com.example.logindemo.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +21,7 @@ import com.example.logindemo.Fragment.HomeFragment;
 import com.example.logindemo.Fragment.StudyFragment;
 import com.example.logindemo.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ViewPager viewPager;
     private StudyFragment studyFragment;
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment[] fragments;
     private int lastShowFragment = 0;
     private SearchView mSearchView;
+    private DrawerLayout drawerLayout;
 
     //监听各个控件
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -61,9 +66,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        }
+        NavigationListener();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.btn_menu);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initFragments();
+
     }
 
 
@@ -101,5 +114,53 @@ public class MainActivity extends AppCompatActivity {
         mSearchView.setSubmitButtonEnabled(true);//显示提交按钮
         mSearchView.setQueryHint("请输入要搜索的内容");//输入框提示语
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                default:
+        }
+        return true;
+    }
+
+    public void NavigationListener(){
+
+        NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
+        navView.setCheckedItem(R.id.nav_collection);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+        navView.setCheckedItem(R.id.nav_log);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+        navView.setCheckedItem(R.id.nav_setting);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+        navView.setCheckedItem(R.id.nav_about);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item){
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
     }
 }

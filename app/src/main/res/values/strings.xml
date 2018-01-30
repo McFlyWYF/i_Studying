@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginDemo</string>
+    <string name="app_name">爱学习</string>
     <string name="title_activity_personal">PersonalActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
