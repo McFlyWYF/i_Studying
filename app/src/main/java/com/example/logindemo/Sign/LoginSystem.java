@@ -33,9 +33,7 @@ public class LoginSystem extends AppCompatActivity {
         school.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginSystem.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });
     }

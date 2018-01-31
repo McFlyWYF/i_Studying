@@ -6,11 +6,9 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
@@ -67,11 +65,6 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout);
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-        }
         NavigationListener();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.btn_menu);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -114,16 +107,6 @@ public class MainActivity extends AppCompatActivity{
         mSearchView.setSubmitButtonEnabled(true);//显示提交按钮
         mSearchView.setQueryHint("请输入要搜索的内容");//输入框提示语
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                drawerLayout.openDrawer(GravityCompat.START);
-                default:
-        }
-        return true;
     }
 
     public void NavigationListener(){

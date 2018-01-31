@@ -49,4 +49,5 @@ public class News{
     public void setNewsUrl(String newsUrl) {
         this.newsUrl = newsUrl;
     }
+
 }
