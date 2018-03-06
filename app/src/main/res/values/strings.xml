@@ -8,4 +8,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="study_text">自习室</string>
+    <string name="classroom1">该教室目前无课</string>
+    <string name="classroom2">该教室目前无课</string>
 </resources>
