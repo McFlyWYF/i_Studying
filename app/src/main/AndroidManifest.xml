@@ -58,7 +58,8 @@
         <service android:name="com.amap.api.location.APSService" />
 
         <activity android:name=".activity.SchoolNewsActivity" />
-        <activity android:name=".activity.FifthteenActivity"></activity>
+        <activity android:name=".activity.FifthteenActivity" />
+        <activity android:name=".activity.FindActivity"></activity>
     </application>
 
 </manifest>

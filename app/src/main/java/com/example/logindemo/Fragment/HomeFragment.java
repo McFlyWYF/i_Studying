@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.logindemo.R;
+import com.example.logindemo.activity.FindActivity;
 import com.example.logindemo.activity.NewsDisplayActivity;
 import com.example.logindemo.activity.SchoolNewsActivity;
 import com.example.logindemo.adapter.NewsAdapter;
@@ -68,6 +69,14 @@ public class HomeFragment extends Fragment {
         find = (TextView) view.findViewById(R.id.find_text);
         information = (TextView) view.findViewById(R.id.information_text);
         activity = (TextView) view.findViewById(R.id.activity_text);
+
+        find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FindActivity.class);
+                startActivity(intent);
+            }
+        });
 
         information.setOnClickListener(new View.OnClickListener(){
             @Override
