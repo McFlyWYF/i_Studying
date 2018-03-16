@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/iconback">
+
+        <TextView
+            android:id="@+id/change_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更换头像"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/myicon"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="wangyufei"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:id="@+id/collection"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="我的收藏"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/collecte"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:id="@+id/logg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="学习记录"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/log" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="设置"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/set"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:id="@+id/show_about"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="关于"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/aboutme"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -58,7 +58,7 @@ public class NewsAdapter extends BaseAdapter {
         }
         viewHolder.newsTitle.setText(newsList.get(position).getNewsTitle());
         viewHolder.newsDesc.setText(newsList.get(position).getDesc());
-        viewHolder.newsTime.setText("来源 : "+newsList.get(position).getNewsTime());
+        viewHolder.newsTime.setText("来源 : 腾讯新闻");
         return view;
     }
 

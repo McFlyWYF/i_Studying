@@ -25,7 +25,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/mainicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -51,6 +51,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.StudyActivity" />
         <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.MyActivity"/>
         <activity android:name=".navigation.NavigationActivity" />
         <activity android:name=".navigation.SearchMap" />
         <activity android:name=".activity.NewsDisplayActivity" />
@@ -59,7 +60,9 @@
 
         <activity android:name=".activity.SchoolNewsActivity" />
         <activity android:name=".activity.FifthteenActivity" />
-        <activity android:name=".activity.FindActivity"></activity>
+        <activity android:name=".activity.ContentActivity" />
+        <activity android:name=".activity.FindActivity" />
+        <activity android:name=".activity.ShowAboutActivity"></activity>
     </application>
 
 </manifest>
