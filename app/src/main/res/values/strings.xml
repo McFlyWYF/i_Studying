@@ -10,4 +10,12 @@
     <string name="study_text">自习室</string>
     <string name="classroom1">该教室目前无课</string>
     <string name="classroom2">该教室目前无课</string>
+    <string-array name="search_web">
+        <item>百度</item>
+        <item>知乎</item>
+        <item>CSDN</item>
+        <item>掘金</item>
+    </string-array>
+
+    <string name="show_about">本作品用于自习室的查找以及丰富学生的校园的生活。版本后续还会更新，敬请期待。版本号  1.1.0     项目地址：https://github.com/wangyufei1006/i_Studying</string>
 </resources>

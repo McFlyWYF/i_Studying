@@ -5,15 +5,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.logindemo.R;
+import com.example.logindemo.activity.ContentActivity;
 import com.example.logindemo.activity.FindActivity;
 import com.example.logindemo.activity.NewsDisplayActivity;
 import com.example.logindemo.activity.SchoolNewsActivity;
@@ -38,6 +46,12 @@ public class HomeFragment extends Fragment {
     private TextView find;
     private TextView information;
     private TextView activity;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    String[] searchWeb;
+    public String content;
+    public String content1;
+    public String content2;
+    private static final String TAG = "MainActivity";
 
 
     @Override
@@ -86,16 +100,88 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        Button btnGo = (Button) view.findViewById(R.id.btn_go);
+        final EditText etSearch = (EditText) view.findViewById(R.id.et_search);
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                content1 = etSearch.getText().toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        Spinner spinner = (Spinner) view.findViewById(R.id.sp_menu);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                searchWeb = getResources().getStringArray(R.array.search_web);
+                if (searchWeb[position].equals("百度")) {
+                    content = "http://www.baidu.com/s?wd=";
+                }else if (searchWeb[position].equals("知乎")) {
+                    content = "https://www.zhihu.com/signup?next=%2F";
+                }else if (searchWeb[position].equals("CSDN")) {
+                    content = "https://www.csdn.net/";
+                }else if (searchWeb[position].equals("掘金")) {
+                    content = "https://juejin.im/";
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        etSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        content1 = etSearch.getText().toString();
+
+        Log.i(TAG, content1);
+        btnGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                content2 = content + content1;
+
+                Intent intent = new Intent(getActivity().getApplicationContext(), ContentActivity.class);
+                intent.putExtra("searchContent", content2);
+                Toast.makeText(getActivity(), content2, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
-
     private void getNews() {
 
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    //获取虎扑新闻5页的数据，网址格式为：https://voice.hupu.com/nba/第几页
+                    //获取腾讯新闻5页的数据，网址格式为：https://voice.hupu.com/nba/第几页
                     for (int i = 1; i <= 1; i++) {
 
                         Document doc = Jsoup.connect("http://news.qq.com/").get();

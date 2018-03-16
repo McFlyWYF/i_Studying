@@ -16,4 +16,9 @@
         android:title="下课聊"
         android:icon="@drawable/chat" />
 
+    <item
+        android:id="@+id/action_my"
+        android:title="我的"
+        android:icon="@drawable/me" />
+
 </menu>

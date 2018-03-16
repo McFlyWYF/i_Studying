@@ -3,32 +3,33 @@ package com.example.logindemo.activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.example.logindemo.Fragment.ChatFragment;
 import com.example.logindemo.Fragment.HomeFragment;
+import com.example.logindemo.Fragment.MyFragment;
 import com.example.logindemo.Fragment.StudyFragment;
 import com.example.logindemo.R;
 
 public class MainActivity extends AppCompatActivity{
 
-    private ViewPager viewPager;
     private StudyFragment studyFragment;
     private ChatFragment chatFragment;
     private HomeFragment homeFragment;
+    private MyFragment myFragment;
+
     private Fragment[] fragments;
     private int lastShowFragment = 0;
+
     private SearchView mSearchView;
     private DrawerLayout drawerLayout;
+    private ImageView myPhotoview;
 
     //监听各个控件
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -55,6 +56,12 @@ public class MainActivity extends AppCompatActivity{
                         lastShowFragment = 2;
                     }
                     return true;
+                case R.id.action_my:
+                    if (lastShowFragment != 3) {
+                        switchFrament(lastShowFragment, 3);
+                        lastShowFragment = 3;
+                    }
+                    return true;
             }
             return false;
         }
@@ -65,13 +72,10 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout);
-        NavigationListener();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.btn_menu);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         initFragments();
-
     }
-
 
     //添加各个Fragment
     public void switchFrament(int lastIndex, int index) {
@@ -88,7 +92,8 @@ public class MainActivity extends AppCompatActivity{
         studyFragment = new StudyFragment();
         chatFragment = new ChatFragment();
         homeFragment = new HomeFragment();
-        fragments = new Fragment[]{homeFragment, studyFragment, chatFragment};
+        myFragment = new MyFragment();
+        fragments = new Fragment[]{homeFragment, studyFragment, chatFragment,myFragment};
         lastShowFragment = 0;
         Fragment fragment = new Fragment();
         getSupportFragmentManager()
@@ -96,54 +101,5 @@ public class MainActivity extends AppCompatActivity{
                 .add(R.id.fragment_container, homeFragment)
                 .show(fragment)
                 .commit();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search, menu);
-        MenuItem searchItem = menu.findItem(R.id.menu_search);
-        //通过MenuItem得到SearchView
-        mSearchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        mSearchView.setSubmitButtonEnabled(true);//显示提交按钮
-        mSearchView.setQueryHint("请输入要搜索的内容");//输入框提示语
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public void NavigationListener(){
-
-        NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
-        navView.setCheckedItem(R.id.nav_collection);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item){
-                drawerLayout.closeDrawers();
-                return true;
-            }
-        });
-        navView.setCheckedItem(R.id.nav_log);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item){
-                drawerLayout.closeDrawers();
-                return true;
-            }
-        });
-        navView.setCheckedItem(R.id.nav_setting);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item){
-                drawerLayout.closeDrawers();
-                return true;
-            }
-        });
-        navView.setCheckedItem(R.id.nav_about);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item){
-                drawerLayout.closeDrawers();
-                return true;
-            }
-        });
     }
 }
