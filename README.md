@@ -24,3 +24,6 @@
 ![Image Text](https://raw.github.com/wangyufei1006/Java-Design-patterns/master/Image/18.png)
 * 个人中心
 ![Image Text](https://raw.github.com/wangyufei1006/Java-Design-patterns/master/Image/19.png)
+
+
+* 界面有点丑，就先这样，功能实现之后，再慢慢优化界面，聊天功能正在完善中......
