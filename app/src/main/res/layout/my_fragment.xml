@@ -42,10 +42,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/my_count"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="我的账号"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/rightset"
+            android:drawableLeft="@drawable/accountme" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ffffff"/>
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:background="#cccccc" />
 
         <TextView
             android:id="@+id/collection"
@@ -54,12 +67,16 @@
             android:text="我的收藏"
             android:textSize="16sp"
             android:gravity="center_vertical"
-            android:drawableLeft="@drawable/collecte"/>
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/rightset"
+            android:drawableLeft="@drawable/collect"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ffffff"/>
+            android:layout_height="1dp"
+            android:background="#cccccc"
+            android:layout_marginLeft="15dp"/>
 
         <TextView
             android:id="@+id/logg"
@@ -68,12 +85,16 @@
             android:text="学习记录"
             android:textSize="16sp"
             android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/rightset"
             android:drawableLeft="@drawable/log" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ffffff"/>
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:background="#cccccc" />
 
         <TextView
             android:id="@+id/setting"
@@ -82,12 +103,16 @@
             android:text="设置"
             android:textSize="16sp"
             android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/rightset"
             android:drawableLeft="@drawable/set"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#ffffff"/>
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:background="#cccccc" />
 
         <TextView
             android:id="@+id/show_about"
@@ -96,8 +121,15 @@
             android:text="关于"
             android:textSize="16sp"
             android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/rightset"
             android:drawableLeft="@drawable/aboutme"/>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cccccc" />
     </LinearLayout>
 
 </LinearLayout>
