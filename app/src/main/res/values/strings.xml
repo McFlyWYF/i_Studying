@@ -10,6 +10,10 @@
     <string name="study_text">自习室</string>
     <string name="classroom1">该教室目前无课</string>
     <string name="classroom2">该教室目前无课</string>
+    <string name="first">首页</string>
+    <string name="study">自习室</string>
+    <string name="chat">下课聊</string>
+    <string name="me">我的</string>
     <string-array name="search_web">
         <item>百度</item>
         <item>知乎</item>

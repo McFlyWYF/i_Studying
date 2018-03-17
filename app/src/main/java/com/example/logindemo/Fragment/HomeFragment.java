@@ -7,14 +7,15 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -100,8 +101,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Button btnGo = (Button) view.findViewById(R.id.btn_go);
+        ImageButton btnGo = (ImageButton) view.findViewById(R.id.btn_go);
         final EditText etSearch = (EditText) view.findViewById(R.id.et_search);
+        etSearch.setInputType(InputType.TYPE_NULL);
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
