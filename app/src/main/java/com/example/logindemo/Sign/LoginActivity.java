@@ -1,17 +1,18 @@
 package com.example.logindemo.Sign;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.logindemo.activity.MainActivity;
 import com.example.logindemo.R;
+import com.example.logindemo.activity.MainActivity;
+
+import cn.bmob.v3.Bmob;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bmob.initialize(this, "2991adef82274d2ea5fc1ff67d8b4842");//初始化Bmob
         setContentView(R.layout.activity_login);
 
         accountText = (EditText) findViewById(R.id.input_account);
@@ -37,19 +39,25 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences pref = getSharedPreferences("data",MODE_PRIVATE);
-                String name = pref.getString("name","");
-                String password = pref.getString("password","");
+//                BmobQuery<Person> bmobQuery = new BmobQuery<Person>();
+//                BmobUser b = new BmobUser();
+//                String account = accountText.getText().toString();
+//                String password = passwordText.getText().toString();
+//                b.setUsername(account);
+//                b.setPassword(password);
+//                b.login(new SaveListener<BmobUser>() {
+//
+//                    @Override
+//                    public void done(BmobUser bmobUser, BmobException e) {
+//                        if(e==null){
+//                            Toast.makeText(LoginActivity.this,"登录成功:", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(intent);
+//                        }else{
+//                        }
+//                    }
+//                });
 
-                String name1 = accountText.getText().toString();
-                String password1 = passwordText.getText().toString();
-                if(name1.equals("123") && password1.equals("123")){
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }else {
-                    Toast.makeText(LoginActivity.this,"用户名不存在或密码错误",Toast.LENGTH_SHORT).show();
-                }
             }
         });
 

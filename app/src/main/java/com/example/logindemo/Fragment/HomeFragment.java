@@ -7,7 +7,6 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -103,7 +102,6 @@ public class HomeFragment extends Fragment {
 
         ImageButton btnGo = (ImageButton) view.findViewById(R.id.btn_go);
         final EditText etSearch = (EditText) view.findViewById(R.id.et_search);
-        etSearch.setInputType(InputType.TYPE_NULL);
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -183,7 +181,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    //获取腾讯新闻5页的数据，网址格式为：https://voice.hupu.com/nba/第几页
+                    //获取腾讯新闻5页的数据，网址格式为：https://news.qq.com/第几页
                     for (int i = 1; i <= 1; i++) {
 
                         Document doc = Jsoup.connect("http://news.qq.com/").get();
