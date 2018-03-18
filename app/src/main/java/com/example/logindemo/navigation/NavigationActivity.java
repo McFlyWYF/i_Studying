@@ -1,39 +1,22 @@
 package com.example.logindemo.navigation;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.icu.text.SimpleDateFormat;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.amap.api.location.AMapLocationQualityReport;
 import com.amap.api.maps.AMap;
-import com.amap.api.maps.CameraUpdate;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.example.logindemo.R;
-import com.google.android.gms.maps.model.MapStyleOptions;
-
-import java.util.Date;
-import java.util.List;
 
 
 public class NavigationActivity extends Activity {
@@ -58,9 +41,9 @@ public class NavigationActivity extends Activity {
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NavigationActivity.this,SearchMap.class);
-                startActivity(intent);
-                finish();
+//                Intent intent = new Intent(NavigationActivity.this,SearchMap.class);
+//                startActivity(intent);
+//                finish();
             }
         });
         initLocation();
